@@ -9,6 +9,7 @@ var router = express.Router();
 var models = require('../models');
 var School_post = models.School_post;
 
+// 发布新【学校动态】
 router.post('/new', function(req, res, next) {
   console.log(req.body)
   let time = new Date().format("yyyy-MM-dd");
@@ -25,6 +26,7 @@ router.post('/new', function(req, res, next) {
   console.log(post)
 });
 
+// 查询所有【学校动态】
 router.get('/post', function(req, res) {
     School_post.find(function(err, doc) { 
         res.send(doc); 
